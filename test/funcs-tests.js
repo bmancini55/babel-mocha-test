@@ -21,7 +21,7 @@ describe('An assertion failure', function() {
     sut
       .hello('world')
       .then(function(result) {
-        expect(result).to.equal('WRONG');        
+        expect(result).to.equal('WRONG');
       })
       .catch(done);
   });
@@ -30,7 +30,7 @@ describe('An assertion failure', function() {
 describe('An internal failure', function() {
   it('should be caught', function(done) {
     sut
-      .boom()      
+      .boom()
       .catch(done);
   });
 });
@@ -40,5 +40,11 @@ describe('A non-existant function', function() {
     sut
       .doesNotExist()
       .catch(done);
+  });
+});
+
+describe('use of async function', function() {
+  it.only('should be ok', async () => {
+    sut.doAwait();
   });
 });
