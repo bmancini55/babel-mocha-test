@@ -17,7 +17,7 @@ describe('A success', function() {
 });
 
 describe('An assertion failure', function() {
-  it('should be caught', function(done) {
+  it.skip('should be caught', function(done) {
     sut
       .hello('world')
       .then(function(result) {
@@ -28,7 +28,7 @@ describe('An assertion failure', function() {
 });
 
 describe('An internal failure', function() {
-  it('should be caught', function(done) {
+  it.skip('should be caught', function(done) {
     sut
       .boom()
       .catch(done);
@@ -36,7 +36,7 @@ describe('An internal failure', function() {
 });
 
 describe('A non-existant function', function() {
-  it('should be caught', function(done) {
+  it.skip('should be caught', function(done) {
     sut
       .doesNotExist()
       .catch(done);
@@ -44,7 +44,7 @@ describe('A non-existant function', function() {
 });
 
 describe('use of async function', function() {
-  it.only('should be ok', async () => {
+  it('should be ok', async function() {
     sut.doAwait();
   });
 });
