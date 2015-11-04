@@ -2,7 +2,7 @@ let mocha  = require('mocha');
 let chai   = require('chai');
 let expect = chai.expect
 let sut    = require('../src/funcs');
-
+import 'mochawait';
 
 describe('A success', function() {
   it('should return hello + input', function(done) {
@@ -43,8 +43,12 @@ describe('A non-existant function', function() {
   });
 });
 
-describe('use of async function', function() {
-  it('should be ok', async function() {
+describe('use of async ', function() {
+  it('with arrow function', async () => {
     sut.doAwait();
   });
+  it('with anonymous function', async function() {
+    sut.doAwait();
+  });
+
 });
