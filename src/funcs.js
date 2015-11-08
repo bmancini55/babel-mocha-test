@@ -1,3 +1,5 @@
+require("babel-polyfill");
+
 import Promise from 'bluebird';
 
 exports.hello = async function fail(name) {
